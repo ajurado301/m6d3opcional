@@ -1,0 +1,30 @@
+<div class="row mt-5">
+    <div class="col-12 d-flex flex-column justify-content-center align-items-center">
+        <form class="w-50">
+            <h1 class="text-center">Test pipe temperatura</h1>
+            <hr>
+            <div class="input-group mb-3">
+                <span class="input-group-text w-25">Grados</span>
+                <input [(ngModel)]="temperatura.valor" name="grados" type="number" class="form-control">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text w-25">Unidad</span>
+                <select class="form-select" [(ngModel)]="temperatura.unidad" name="unidad-temperatura"
+                    id="unidad-temperatura">
+                    <option value="Celsius">Celsius</option>
+                    <option value="Fahrenheit">Fahrenheit</option>
+                </select>
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text w-25">Convertira a</span>
+                <select class="form-select" [(ngModel)]="unidadPipe" name="unidad-pipe"
+                    id="unidad-pipe">
+                    <option value="Celsius">Celsius</option>
+                    <option value="Fahrenheit">Fahrenheit</option>
+                </select>
+            </div>
+        </form>
+        <h1>{{temperatura | json}}</h1>
+        <h1>{{temperatura | convertir:unidadPipe}}</h1>
+    </div>
+</div>
